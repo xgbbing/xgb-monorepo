@@ -3,8 +3,13 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "pnpm --parallel -r run start",
-    "build": "pnpm -r run build",
+    "packages:start": "pnpm --parallel -r run start",
+    "packages:build": "pnpm -r run build",
+    "docs:start": "dumi dev",
+    "start": "pnpm packages:start & pnpm docs:start",
+    "dev": "pnpm docs:start",
+    "build": "pnpm packages:build",
+    "clean": "rm -rf node_modules ./packages/*/node_modules ./examples/*/node_modules packages/*/{esm,es2017}",
     "eslint": "eslint --cache --ext .js,.jsx,.ts,.tsx ./",
     "eslint:fix": "pnpm eslint --fix",
     "stylelint": "stylelint \"**/*.{css,scss,less}\"",
@@ -13,13 +18,20 @@
     "lint:fix": "pnpm eslint:fix && pnpm stylelint:fix"
   },
   "devDependencies": {
-    "@ice/pkg": "^1.5.0",
     "@applint/spec": "^1.0.0",
+    "@ice/pkg": "^1.5.0",
+    "@ice/pkg-plugin-docusaurus": "^1.4.18",
+    "@swc/core": "^1.3.67",
+    "dumi": "2.2.17",
     "eslint": "^8.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rimraf": "^4.1.2",
-    "stylelint": "^15.0.0"
+    "stylelint": "^15.0.0",
+    "swc-plugin-auto-css-modules": "^1.5.0",
+    "header": "workspace:^",
+    "component-a": "workspace:^",
+    "component-b": "workspace:^"
   },
   "packageManager": "pnpm@8.6.0"
 }
