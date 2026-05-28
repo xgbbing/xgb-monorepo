@@ -4,9 +4,9 @@
 
 ```bash
 # Install Dependencies.
-$ pnpm i 
+$ pnpm i
 # Build and link packages.
-$ pnpm packages:build
+$ pnpm build
 # Start watch service
 $ pnpm start
 ```

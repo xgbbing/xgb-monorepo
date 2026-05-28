@@ -1,30 +1,25 @@
 import { defineConfig } from 'dumi';
+import path from "path"
 
 export default defineConfig({
-  outputPath: 'docs',
+  outputPath: 'docs-dist',
   themeConfig: {
-    name: 'xgb-monorepo',
+    name: 'rc-monorepo',
     defaultPlatform: 'pc',
-    // sidebar,
-    nav: [
-      {
-        title: '开发指南',
-        link: '/guide',
-      }
-    ],
     noIndexPage: false,
   },
   theme: {
     '@hd': '2px',
   },
-  // mfsu: false,
-  // history: {
-  //   type: 'hash',
-  // },
-  // resolve: {
-  //   docDirs: ['docs'],
-  //   atomDirs: [{ type: 'component', dir: 'src' }],
-  // },
-  // srcTranspiler: "swc",
-  // jsMinifier: "swc",
+  alias: {
+    '@xgb/business-components': path.resolve(__dirname, 'packages/business-components/src'),
+    '@xgb/common-components': path.resolve(__dirname, 'packages/common-components/src'),
+  },
+  resolve: {
+    docDirs: ['docs'],
+    atomDirs: [
+      { type: 'component', dir: 'packages/business-components/docs' },
+      { type: 'component', dir: 'packages/common-components/docs' }
+    ],
+  },
 });

@@ -1,5 +1,5 @@
 {
-  "name": "component-b",
+  "name": "@xgb/business-components",
   "version": "0.1.0",
   "description": "组件功能描述",
   "files": [
@@ -32,7 +32,7 @@
   ],
   "scripts": {
     "start": "ice-pkg start",
-    "build": "rimraf esm es2017 && ice-pkg build",
+    "build": "rimraf esm es2017 && ice-pkg build && father build",
     "prepublishOnly": "npm run build"
   },
   "keywords": [
@@ -43,17 +43,24 @@
   "dependencies": {
     "@ice/jsx-runtime": "^0.3.0",
     "@swc/helpers": "^0.5.1",
-    "header": "workspace:^"
+    "@xgb/common-components": "workspace:*",
+    "react-markdown": "8.0.7",
+    "rehype-raw": "^7.0.0",
+    "remark-gfm": "3.0.1",
+    "less": "^4.4.1"
   },
   "devDependencies": {
-    "@ice/pkg": "^1.0.0",
+    "@ice/pkg": "^1.6.2",
     "@types/react": "^18.0.0",
     "react": "^18.0.0",
     "typescript": "^4.9.4",
-    "@ice/pkg-plugin-docusaurus": "^1.4.18"
+    "father": "^4.6.10"
   },
   "peerDependencies": {
     "react": "^17 || ^18"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "authors": [
+    "xgb.xu@qq.com"
+  ]
 }

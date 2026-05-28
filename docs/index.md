@@ -6,7 +6,7 @@ hero:
     - text: 开发指南
       link: /guide
     - text: 基础组件
-      link: /
+      link: /components/mark-down-table-parse
 features:
   - title: Hello
     emoji: 💎
@@ -18,5 +18,3 @@ features:
     emoji: 🚀
     description: Put ! description here
 ---
-
-xgb-monorepo

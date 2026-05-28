@@ -1,7 +1,9 @@
 {
-  "name": "react-component-monorepo",
-  "version": "0.0.0",
+  "name": "react-components-monorepo",
+  "version": "0.0.1",
+  "description": "react components monorepo",
   "private": true,
+  "lcense": "MIT",
   "scripts": {
     "packages:start": "pnpm --parallel -r run start",
     "packages:build": "pnpm -r run build",
@@ -9,29 +11,32 @@
     "start": "pnpm packages:start & pnpm docs:start",
     "dev": "pnpm docs:start",
     "build": "pnpm packages:build",
-    "clean": "rm -rf node_modules ./packages/*/node_modules ./examples/*/node_modules packages/*/{esm,es2017}",
+    "clean": "rm -rf node_modules ./packages/*/node_modules ./examples/*/node_modules packages/*/{esm,es2017,dist,cjs}",
     "eslint": "eslint --cache --ext .js,.jsx,.ts,.tsx ./",
     "eslint:fix": "pnpm eslint --fix",
     "stylelint": "stylelint \"**/*.{css,scss,less}\"",
     "stylelint:fix": "pnpm stylelint --fix",
     "lint": "pnpm eslint && pnpm stylelint",
-    "lint:fix": "pnpm eslint:fix && pnpm stylelint:fix"
+    "lint:fix": "pnpm eslint:fix && pnpm stylelint:fix",
+    "prepare": "husky install && dumi setup",
+    "prepublishOnly": "npm run build"
   },
   "devDependencies": {
-    "@applint/spec": "^1.0.0",
-    "@ice/pkg": "^1.5.0",
+    "@applint/spec": "^1.2.3",
+    "@ice/pkg": "^1.6.2",
     "@ice/pkg-plugin-docusaurus": "^1.4.18",
-    "@swc/core": "^1.3.67",
+    "@swc/core": "^1.15.40",
     "dumi": "2.2.17",
-    "eslint": "^8.0.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "rimraf": "^4.1.2",
-    "stylelint": "^15.0.0",
-    "swc-plugin-auto-css-modules": "^1.5.0",
-    "header": "workspace:^",
-    "component-a": "workspace:^",
-    "component-b": "workspace:^"
+    "eslint": "^8.57.1",
+    "husky": "^8.0.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "rimraf": "^4.4.1",
+    "stylelint": "^15.11.0",
+    "swc-plugin-auto-css-modules": "^1.6.0"
   },
-  "packageManager": "pnpm@8.6.0"
+  "packageManager": "pnpm@8.6.0",
+  "authors": [
+    "xgb.xu@qq.com"
+  ]
 }

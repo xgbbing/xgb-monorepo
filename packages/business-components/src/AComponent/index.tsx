@@ -1,6 +1,6 @@
 import * as React from 'react';
-import Header from 'header';
-import styles from './index.module.css';
+import Header from '@xgb/common-components';
+import styles from './index.module.less';
 
 interface ComponentProps {
   /** Title for ComponentA. */
